@@ -1,0 +1,71 @@
+:root {
+    --primary-color: #ED1C24;
+    --secondary-color: #808285;
+    --white-color: #ffffff;
+    --normal-color: #202124;
+}
+
+* {
+    outline: 1px solid skyblue;
+}
+
+.wrap {}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    line-height: 100px;
+}
+
+#header.on {
+    background: var(--white-color);
+    color: var(--normal-color);
+    line-height: 80px;
+}
+
+#header .h_inner {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    color: var(--white-color);
+}
+
+#header .gnb ul {
+    display: flex;
+    gap: 30px;
+}
+
+#header .gnb ul li {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.MainVisual {}
+
+.MainVisual .itm {
+    position: relative;
+    height: 100vh;
+}
+
+.MainVisual .itm01 {
+    background: url(../images/sec1_bg.jpg) no-repeat center center/cover;
+}
+
+.MainVisual .itm02 {
+    background: url(../images/sec3_bg.jpg) no-repeat center center/cover;
+}
+
+.MainVisual .itm .txt_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: left;
+    transform: translate(-50%, -50%);
+    max-width: 1200px;
+    width: 100%;
+    color: var(--white-color);
+}
