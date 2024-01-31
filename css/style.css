@@ -35,13 +35,13 @@
 }
 
 #header .h_inner h1 img {
-    width: 170px;
+    width: 200px;
     height: 80px;
 }
 
 #header .gnb ul {
     display: flex;
-    gap: 30px;
+    gap: 40px;
 }
 
 #header .gnb ul li {
@@ -49,14 +49,9 @@
     font-weight: 500;
 }
 
-#header .lang_box {
-    width: 100px;
-    background: var(--secondary-color);
-}
-
-#header .lang_box ul {
-    text-align: center;
-    align-items: center;
+#header .util_box ul {
+    display: flex;
+    gap: 24px;
 }
 
 .MainVisual {}
@@ -87,26 +82,23 @@
     color: var(--white-color);
 }
 
-.MainVisual .itm .txt_box figure {
-    margin: 0 0 40px 0;
+.MainVisual .itm .txt_box span {
+    display: block;
+    font-size: 24px;
+    font-weight: 500;
 }
 
-.MainVisual .itm .txt_box figure img {
-    height: 40px;
+.MainVisual .itm .txt_box strong {
+    font-size: 64px;
+    font-weight: 700;
+    margin: 0 0 24px 0;
 }
 
 .MainVisual .itm .txt_box p {
-    font-size: 64px;
-    font-weight: 700;
-    line-height: 70px;
-    margin: 0 0 80px 0;
+    font-size: 24px;
 }
 
-.MainVisual .itm .txt_box span {
-    position: relative;
-    font-size: 20px;
-}
-
+/* 
 .MainVisual .itm .txt_box span::before {
     content: "";
     position: absolute;
@@ -116,7 +108,7 @@
     bottom: 50px;
     left: 0;
     transform: translate(0, -50%);
-}
+} */
 
 .MainVisual .main_slide .slick-dots {
     position: absolute;
@@ -148,6 +140,44 @@
 
 
 
+.MainIntro {}
+
+.MainIntro .tit_area {
+    text-align: center;
+}
+
+.MainIntro .tit_area {
+    position: relative;
+    padding: 30px 0 0 0;
+}
+
+.MainIntro .tit_area::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 8px;
+    background: var(--primary-color);
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.MainIntro .tit_area h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+}
+
+.MainIntro .tit_area p {
+    line-height: 24px;
+}
+
+.MainIntro .tit_area span {
+    font-size: 32px;
+}
+
+
+
 .MainContent {}
 
 .MainContent .inner {
@@ -156,24 +186,26 @@
 }
 
 .MainContent .tit_area {
-    position: relative;
-    padding: 30px 0 0 0;
+    padding: 0 0 0 0;
 }
 
-.MainContent .tit_area::before {
-    content: "";
-    position: absolute;
-    width: 40px;
-    height: 8px;
-    background: var(--primary-color);
-    top: 0;
-    left: 0;
-}
 
 .MainContent .tit_area h2 {
+    position: relative;
     font-size: 28px;
     font-weight: 600;
-    margin: 0 0 12px 0;
+    margin: 0 0 40px 0;
+}
+
+.MainContent .tit_area h2::before {
+    content: "";
+        position: absolute;
+        width: 40px;
+        height: 4px;
+        background: var(--primary-color);
+        bottom: -20px;
+        left: 0;
+        transform: translate(0, 50%);
 }
 
 .MainContent .tit_area p {
@@ -182,7 +214,7 @@
 
 .MainContent .con_area {
     display: flex;
-    width: 900px;
+    width: 1000px;
 }
 
 .MainContent .con_area figure {
@@ -260,46 +292,30 @@ figure:hover .hid_txt {
 }
 
 
-
-.MainIntro {}
-
-.MainIntro .tit_area {
+.MainNews {}
+.MainNews .tit_area {
     text-align: center;
 }
 
-.MainIntro .tit_area {
+.MainNews .tit_area h2 {
     position: relative;
-    padding: 30px 0 0 0;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 40px 0;
 }
 
-.MainIntro .tit_area::before {
+.MainNews .tit_area h2::before {
     content: "";
     position: absolute;
     width: 40px;
-    height: 8px;
+    height: 4px;
     background: var(--primary-color);
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-.MainIntro .tit_area h2 {
-    font-size: 28px;
-    font-weight: 600;
-    margin: 0 0 12px 0;
-}
-
-.MainIntro .tit_area p {
-    line-height: 24px;
+    bottom: -20px;
+        left: 50%;
+        transform: translate(-50%, 0);
 }
 
 
-
-.WideBanner {
-    background: url(../images/);
-}
-
-.WideBanner {}
 
 .footer {
     height: 50vh;
