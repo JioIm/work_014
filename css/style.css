@@ -1,6 +1,10 @@
 :root {
-    --primary-color: #ED1C24;
-    --secondary-color: #808285;
+    --p-color: #8DC63F;
+    --s-color: #009ddc;
+    --t-color: #f15c22;
+    --f-color: #F8981C;
+    --light-gray: #ADAFB2;
+    --dark-gray: #53534A;
     --white-color: #ffffff;
     --normal-color: #202124;
 }
@@ -62,11 +66,11 @@
 }
 
 .MainVisual .itm01 {
-    background: url(../images/sec1_bg.jpg) no-repeat center center/cover;
+    background: url(../images/mainVisual_001.jpg) no-repeat center center/cover;
 }
 
 .MainVisual .itm02 {
-    background: url(../images/sec2_bg.jpg) no-repeat center center/cover;
+    background: url(../images/mainVisual_003.jpg) no-repeat center center/cover;
 }
 
 .MainVisual .itm .txt_box {
@@ -86,16 +90,17 @@
     display: block;
     font-size: 24px;
     font-weight: 500;
+    margin: 0 0 8px 0;
 }
 
 .MainVisual .itm .txt_box strong {
     font-size: 64px;
     font-weight: 700;
-    margin: 0 0 24px 0;
+    margin: 0 0 40px 0;
 }
 
 .MainVisual .itm .txt_box p {
-    font-size: 24px;
+    font-size: 20px;
 }
 
 /* 
@@ -119,8 +124,8 @@
 
 .MainVisual .main_slide .slick-dots li {
     display: inline-block;
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     background: #ddd;
     margin: 0 8px 0 0;
     border-radius: 8px;
@@ -129,7 +134,7 @@
 
 .MainVisual .main_slide .slick-dots li.slick-active {
     width: 50px;
-    background: #9e1c4e;
+    background: var(--s-color);
     transition: width 1s;
 }
 
@@ -151,38 +156,60 @@
     padding: 30px 0 0 0;
 }
 
-.MainIntro .tit_area::before {
+/* .MainIntro .tit_area::before {
     content: "";
     position: absolute;
-    width: 40px;
+    width: 8px;
     height: 8px;
-    background: var(--primary-color);
+    background: var(--p-color);
     top: 0;
     left: 50%;
     transform: translate(-50%, 0);
-}
+} */
 
 .MainIntro .tit_area h2 {
     font-size: 28px;
     font-weight: 600;
-    margin: 0 0 12px 0;
+    margin: 0 0 24px 0;
 }
 
 .MainIntro .tit_area p {
+    position: relative;
     line-height: 24px;
+    margin: 0 0 260px 0;
 }
 
 .MainIntro .tit_area span {
+
+    font-size: 32px;
+}
+
+.MainIntro .tit_area p::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 160px;
+    background: linear-gradient(to bottom,
+            rgba(0, 157, 220, 0) 10%,
+            rgba(0, 157, 220, 0.25) 25%,
+            rgba(0, 157, 220, 0.45) 50%,
+            rgba(0, 157, 220, 0.75) 75%);
+    ;
+    top: 80px;
+    left: 50%;
     font-size: 32px;
 }
 
 
 
-.MainContent {}
+.MainContent {
+    background: #f9f9f9;
+}
 
 .MainContent .inner {
-    display: flex;
-    justify-content: space-between;
+    /* display: flex;
+    justify-content: space-between; */
+    text-align: center;
 }
 
 .MainContent .tit_area {
@@ -199,61 +226,92 @@
 
 .MainContent .tit_area h2::before {
     content: "";
-        position: absolute;
-        width: 40px;
-        height: 4px;
-        background: var(--primary-color);
-        bottom: -20px;
-        left: 0;
-        transform: translate(0, 50%);
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    background: var(--p-color);
+    bottom: -20px;
+    left: 50%;
+    transform: translate(-50%, 50%);
 }
 
 .MainContent .tit_area p {
     line-height: 24px;
+    margin: 0 0 32px 0;
 }
 
 .MainContent .con_area {
     display: flex;
-    width: 1000px;
+    width: 1200px;
+    gap: 16px;
+
 }
 
 .MainContent .con_area figure {
     position: relative;
+    overflow: hidden;
+    height: 400px;
+    min-width: 288px;
+
+    /* filter: grayscale(40%) brightness(0.5); */
 }
 
-.MainContent .con_area figure .img_box {
-    filter: brightness(0.6);
+.MainContent .con_area .f_01 {
+    border: 2px solid var(--p-color);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url(../images/con_001.jpg)no-repeat center center/cover;
+    filter: grayscale(40%);
+}
+
+.MainContent .con_area .f_02 {
+    border: 2px solid var(--s-color);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url(../images/con_002.jpg)no-repeat center center/cover;
+    filter: grayscale(40%);
+}
+
+.MainContent .con_area .f_03 {
+    border: 2px solid var(--f-color);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url(../images/con_003.jpg)no-repeat center center/cover;
+    filter: grayscale(40%);
+}
+
+.MainContent .con_area .f_04 {
+    border: 2px solid var(--t-color);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url(../images/con_004.jpg)no-repeat center center/cover;
+    filter: grayscale(40%);
 }
 
 .MainContent .con_area figure .txt {
     position: absolute;
-    top: 30px;
-    left: 30px;
-    display: flex;
-    flex-direction: column;
+    top: 32px;
+    left: 24px;
+    right: 24px;
     color: var(--white-color);
+    text-align: left;
 }
 
 .MainContent .con_area figure .txt strong {
+    display: block;
     font-size: 18px;
     font-weight: 600;
     margin: 0 0 8px 0;
+    left: 0;
 }
 
-.MainContent .con_area figure .txt span {
+.MainContent .con_area figure .txt em {
+    display: block;
     font-weight: 400;
 }
 
+.MainContent .con_area figure .txt .icon {
+    margin: 30px 0 0 0;
+    text-align: right;
+}
+
+.MainContent .con_area figure .txt .icon span {
+    font-size: 60px;
+}
+
 /* 현명 작업 */
-
-figure {
-    position: relative;
-    overflow: hidden;
-}
-
-figure .img_box img {
-    height: 400px;
-}
 
 .MainContent .con_area figure .txt {
     z-index: 999;
@@ -261,13 +319,34 @@ figure .img_box img {
 
 .hid_txt {
     position: absolute;
-    bottom: -400px;
+    bottom: -150px;
     width: 100%;
-    height: 400px;
-    background: rgba(0, 0, 0, 0.5);
+    height: 150px;
+    /* background: linear-gradient(to top,
+            rgba(255, 255, 255, 1) 50%,
+            rgba(255, 255, 255, 0) 100%); */
     transition: 0.5s;
     visibility: hidden;
+    text-align: left;
+    color: var(--white-color);
 }
+
+.MainContent .con_area .f_01 .hid_txt {
+    background: var(--p-color);
+}
+
+.MainContent .con_area .f_02 .hid_txt {
+    background: var(--s-color);
+}
+
+.MainContent .con_area .f_03 .hid_txt {
+    background: var(--f-color);
+}
+
+.MainContent .con_area .f_04 .hid_txt {
+    background: var(--t-color);
+}
+
 
 figure:hover .hid_txt {
     bottom: 0;
@@ -278,8 +357,8 @@ figure:hover .hid_txt {
     /* position: absolute;
     bottom: 50px;
     left: 50px; */
-    padding: 300px 0 0 0;
-    color: #fff;
+    padding: 40px 30px 0 30px;
+    line-height: 22px;
 }
 
 .hid_txt p::before {
@@ -287,33 +366,50 @@ figure:hover .hid_txt {
     display: block;
     width: 10px;
     height: 10px;
-    background: var(--primary-color);
+    background: var(--white-color);
     margin: 0 0 10px 0;
 }
 
 
-.MainNews {}
-.MainNews .tit_area {
+.MainArchive {
     text-align: center;
 }
 
-.MainNews .tit_area h2 {
+.MainArchive .tit_area {
+    text-align: center;
+}
+
+.MainArchive .tit_area h2 {
     position: relative;
     font-size: 28px;
     font-weight: 600;
     margin: 0 0 40px 0;
 }
 
-.MainNews .tit_area h2::before {
+.MainArchive .tit_area h2::before {
     content: "";
     position: absolute;
     width: 40px;
     height: 4px;
     background: var(--primary-color);
     bottom: -20px;
-        left: 50%;
-        transform: translate(-50%, 0);
+    left: 50%;
+    transform: translate(-50%, 0);
 }
+
+.MainArchive .tit_area .a_tab {
+    display: flex;
+    gap: 20px;
+}
+
+.MainArchive .tit_area .a_tab li {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+.MainPlan {}
+
 
 
 
