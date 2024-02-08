@@ -1,14 +1,14 @@
 $(function () {
 
     $(window).on('scroll', function () {
-    const scrollHeight = $(window).scrollTop();
-    if (scrollHeight > 0) {
-        $('.header').addClass('on')
-    } else {
-        $('.header').removeClass('on')
-    }
+        const scrollHeight = $(window).scrollTop();
+        if (scrollHeight > 0) {
+            $('.header').addClass('on')
+        } else {
+            $('.header').removeClass('on')
+        }
     });
-    
+
     $('.main_slide').slick({
         arrows: false,
         dots: true,
@@ -20,7 +20,7 @@ $(function () {
         cssEase: 'linear'
     });
 
-     $('.a_tab li').on('click', function (e) {
+    $('.a_tab li').on('click', function (e) {
         e.preventDefault();
         const idx = $(this).index();
         $('.tab_content .content')
@@ -32,7 +32,13 @@ $(function () {
             .addClass('on')
             .siblings()
             .removeClass('on');
-     });
-    
+    });
+    $('.MainContent .con_area .itm').on('click', function () {
+        $('.MainContent .con_area .itm').removeClass('on');
+        $(this).addClass('on');
+        $('.MainContent .con_area .itm .txt').removeClass('on');
+        $('.MainContent .con_area').addClass('on');
+    })
+
     jQuery.datetimepicker.setLocale('de');
 })

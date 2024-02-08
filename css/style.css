@@ -64,11 +64,6 @@
 
 }
 
-/* #header .h_inner h1 img {
-    width: 200px;
-    height: 80px;
-} */
-
 #header .gnb ul {
     display: flex;
     gap: 40px;
@@ -99,6 +94,10 @@
     background: #ddd;
 }
 
+
+
+
+/* 메인비주얼 */
 .MainVisual {}
 
 .MainVisual .main_slide {
@@ -192,6 +191,67 @@
 
 .MainVisual .scroll {
     position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 999;
+    transform: translate(-50%, 0);
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    height: 80px;
+}
+
+.MainVisual .scroll::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 60px;
+    width: 1px;
+    background: #fff;
+}
+
+.MainVisual .scroll::after {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 6px;
+    width: 6px;
+    background: #fff;
+    border-radius: 50%;
+
+    animation: scroll 1s infinite;
+}
+
+
+@keyframes scroll {
+    0% {
+        top: 40px;
+        transform: translate(-50%, 0) scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        top: 100px;
+        transform: translate(-50%, 0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        top: 100px;
+        transform: translate(-50%, 0) scale(5);
+        opacity: 0;
+    }
+}
+
+
+/* .MainVisual .scroll {
+    position: absolute;
     bottom: 80px;
     left: 50%;
     transform: translate(-50%, 0);
@@ -226,10 +286,14 @@
     100% {
         transform: translate(-50%, 25%);
     }
-}
+} */
 
 
 
+
+
+
+/* 메인인트로/소개 */
 .MainIntro {
     position: relative;
     padding: 150px 0 200px 0;
@@ -297,7 +361,7 @@
     font-size: 32px;
 }
 
-.MainIntro .img_area {
+/* .MainIntro .img_area {
     position: absolute;
     top: 0;
     left: 0;
@@ -349,10 +413,15 @@
     right: 240px;
     bottom: 80px;
     z-index: 20;
-}
+} */
 
 
 
+
+
+
+
+/* 메인콘텐츠 */
 
 .MainContent {
     background: #f9f9f9;
@@ -362,12 +431,114 @@
 }
 
 .MainContent .inner {
-    /* display: flex;
-    justify-content: space-between; */
     text-align: center;
 }
 
 .MainContent .tit_area h2::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    background: var(--s-color);
+    bottom: -20px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.MainContent .con_area {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 10px;
+}
+
+.MainContent .con_area>* {
+
+    padding: 40px;
+    height: 360px;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.MainContent .con_area .itm {
+    position: relative;
+    border-radius: 20px;
+    flex: 1;
+}
+
+.MainContent .con_area .itm.on {
+    flex: 3;
+}
+
+.MainContent .con_area .itm01 {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url(../images/con_001.jpg)no-repeat center center/cover;
+    filter: grayscale(40%);
+}
+
+.MainContent .con_area .itm02 {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url(../images/con_002.jpg)no-repeat center center/cover;
+    filter: grayscale(40%);
+}
+
+.MainContent .con_area .itm03 {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url(../images/con_003.jpg)no-repeat center center/cover;
+    filter: grayscale(40%);
+}
+
+.MainContent .con_area .itm04 {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)), url(../images/con_004.jpg)no-repeat center center/cover;
+    filter: grayscale(40%);
+}
+
+
+.MainContent .con_area .itm .txt_wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    text-align: left;
+    z-index: 1;
+    letter-spacing: 0.2px;
+    color: var(--white-color);
+}
+
+.MainContent .con_area .itm .left_txt {
+    margin: 0 32px 0 0;
+    white-space: nowrap;
+}
+
+.MainContent .con_area .itm .left_txt p {
+    font-size: 18px;
+
+}
+
+.MainContent .con_area .itm .left_txt span {
+    display: block;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 6px 0;
+}
+
+.MainContent .con_area .itm .right_txt {
+    opacity: 0;
+}
+
+.MainContent .con_area .itm.on .right_txt {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    white-space: nowrap;
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+}
+
+
+
+/* .MainContent .tit_area h2::before {
     content: "";
     position: absolute;
     width: 40px;
@@ -390,9 +561,6 @@
     overflow: hidden;
     height: 400px;
     min-width: 288px;
-
-
-    /* filter: grayscale(40%) brightness(0.5); */
 }
 
 .MainContent .con_area .f_01 {
@@ -448,11 +616,11 @@
 
 .MainContent .con_area figure .txt .icon span {
     font-size: 60px;
-}
+} */
 
 /* 현명 작업 */
 
-.MainContent .con_area figure .txt {
+/* .MainContent .con_area figure .txt {
     z-index: 999;
 }
 
@@ -461,9 +629,7 @@
     bottom: -150px;
     width: 100%;
     height: 150px;
-    /* background: linear-gradient(to top,
-            rgba(255, 255, 255, 1) 50%,
-            rgba(255, 255, 255, 0) 100%); */
+
     transition: 0.5s;
     visibility: hidden;
     text-align: left;
@@ -493,9 +659,6 @@ figure:hover .hid_txt {
 }
 
 .hid_txt p {
-    /* position: absolute;
-    bottom: 50px;
-    left: 50px; */
     padding: 40px 30px 0 30px;
     line-height: 22px;
 }
@@ -507,10 +670,15 @@ figure:hover .hid_txt {
     height: 10px;
     background: var(--white-color);
     margin: 0 0 10px 0;
-}
+} */
 
 
 
+
+
+
+
+/* 메인아카이브 */
 .MainArchive {
     text-align: center;
 }
@@ -545,8 +713,7 @@ figure:hover .hid_txt {
     text-align: center;
     padding: 8px 80px;
     /* border-radius: 20px; */
-    border-top: 1px solid rgba(0, 157, 220, 0.6);
-    border-bottom: 1px solid rgba(0, 157, 220, 0.6);
+    border: 1px solid rgba(0, 157, 220, 0.6);
     transition: 0.2s;
     cursor: pointer;
     letter-spacing: 2px;
@@ -655,6 +822,10 @@ figure:hover .hid_txt {
 }
 
 
+
+
+
+/* 지도 부분 */
 .MainMap {
     position: relative;
 }
@@ -757,7 +928,7 @@ figure:hover .hid_txt {
 
 
 
-
+/* 푸터 */
 .footer {
     padding: 50px 0;
     background: #ddd;
