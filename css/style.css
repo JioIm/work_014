@@ -4,6 +4,7 @@
     --t-color: #f15c22;
     --f-color: #F8981C;
     --light-gray: #ADAFB2;
+    --white-gray: #eeeeee;
     --dark-gray: #53534A;
     --white-color: #ffffff;
     --normal-color: #202124;
@@ -513,14 +514,14 @@
 
 .MainContent .con_area .itm .left_txt p {
     font-size: 18px;
+    margin: 0 0 6px 0;
 
 }
 
 .MainContent .con_area .itm .left_txt span {
-    display: block;
     font-size: 28px;
     font-weight: 600;
-    margin: 0 0 6px 0;
+   
 }
 
 .MainContent .con_area .itm .right_txt {
@@ -767,7 +768,6 @@ figure:hover .hid_txt {
     height: 150px;
     padding: 20px 40px;
     align-items: center;
-    justify-content: space-between;
 }
 
 .MainArchive .tab_content ul li:hover .txt_box {
@@ -782,12 +782,14 @@ figure:hover .hid_txt {
 }
 
 .MainArchive .tab_content ul li .txt_box strong {
+    display: block;
     padding: 4px 6px;
     border: 1px solid rgba(0, 157, 220, 0.6);
     border-radius: 20px;
     font-size: 16px;
     font-weight: 500;
     width: 80px;
+    margin: 0 0 16px 0;
 }
 
 .MainArchive .tab_content ul li .txt_box .video {
@@ -809,6 +811,7 @@ figure:hover .hid_txt {
     font-size: 18px;
     font-weight: 600;
     line-height: 22px;
+    margin: 0 0 6px 0;
 }
 
 .MainArchive .tab_content ul li .txt_box span {
@@ -874,7 +877,11 @@ figure:hover .hid_txt {
 }
 
 .MainMap .left_info .call {
-    margin: 0 0 20px 0;
+    border: 1px solid var(--white-gray);
+    border-radius: 10px;
+    background: var(--white-color);
+    padding: 16px;
+    margin: 0 0 10px 0;
 }
 
 .MainMap .left_info .call span {
@@ -886,6 +893,7 @@ figure:hover .hid_txt {
 
 .MainMap .left_info .call strong {
     color: var(--s-color);
+    font-size: 18px;
     font-weight: 600;
 }
 
@@ -895,27 +903,45 @@ figure:hover .hid_txt {
     color: var(--light-gray);
 }
 
+.MainMap .left_info .trans {
+    display: flex;
+    border: 1px solid var(--white-gray);
+    border-radius: 10px;
+    background: var(--white-color);
+    padding: 16px;
+}
+
+.MainMap .left_info .trans_inner li {
+    width: 100%;
+}
+
+.MainMap .left_info .trans_inner a {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 12px;
+    color: #666;
+    background: #fff;
+    border: 1px solid #f2f2f2;
+}
+
+.MainMap .left_info .trans_inner a::after {
+    content: "\e409";
+    font-family: "material symbols outlined";
+    vertical-align: -2px;
+    color: #00478f;
+}
+
+.MainMap .trans_inner li:first-child {
+    margin: 0 0 4px 0;
+}
+
 .MainMap .left_info .trans span {
     display: block;
     font-size: 18px;
     font-weight: 500;
-    margin: 0 0 12px 0;
+    margin: 0 12px 0 0;
 }
-
-.MainMap .left_info .trans strong {
-    display: block;
-    color: var(--s-color);
-    font-weight: 600;
-    font-size: 18px;
-    margin: 0 0 6px 0;
-}
-
-.MainMap .left_info .trans p {
-    font-size: 14px;
-    line-height: 16px;
-    margin: 0 0 16px 0;
-}
-
 
 
 

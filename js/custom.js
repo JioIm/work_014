@@ -14,8 +14,8 @@ $(function () {
         dots: true,
         infinite: true,
         autoplay: true,
-        autoplaySpeed: 5000,
-        // speed: 400,
+        autoplaySpeed: 4000,
+        speed: 400,
         fade: true,
         cssEase: 'linear'
     });
@@ -33,12 +33,12 @@ $(function () {
             .siblings()
             .removeClass('on');
     });
+
     $('.MainContent .con_area .itm').on('click', function () {
         $('.MainContent .con_area .itm').removeClass('on');
         $(this).addClass('on');
         $('.MainContent .con_area .itm .txt').removeClass('on');
         $('.MainContent .con_area').addClass('on');
-    })
-
-    jQuery.datetimepicker.setLocale('de');
+    });
+    
 })
