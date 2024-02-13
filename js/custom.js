@@ -40,5 +40,14 @@ $(function () {
         $('.MainContent .con_area .itm .txt').removeClass('on');
         $('.MainContent .con_area').addClass('on');
     });
-    
+
+    $('.notice_slide').slick({
+        arrows: false,
+        dots: false,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        vertical: true,
+    });
+
 })
