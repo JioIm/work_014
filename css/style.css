@@ -22,7 +22,7 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    line-height: 100px;
+    line-height: 90px;
     color: var(--white-color);
 }
 
@@ -65,41 +65,124 @@
 
 }
 
-#header .gnb ul {
-    display: flex;
-    gap: 40px;
+/* r */
+#header .gnb::before {
+    content: "";
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #fff url(../images/logo_basic.svg)no-repeat center right/50% 50%;
+    z-index: 1;
+    transition: 0.5s;
+
+    /* display: none; */
+    opacity: 0;
+    visibility: hidden;
 }
 
-#header .gnb ul li {
+#header .gnb:hover::before {
+    /* display: block; */
+    opacity: 1;
+    visibility: visible;
+    height: 220px;
+}
+
+/* 
+#header .gnb::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 220px;
+    background: url(../images/logo_basic.svg) no-repeat center center/cover;
+} */
+
+
+#header .gnb .depth1 {
+    display: flex;
+    gap: 60px;
+    text-align: center;
+}
+
+#header .gnb .depth1 li {
     position: relative;
     font-size: 20px;
     font-weight: 600;
 }
 
-#header .gnb ul li:hover a {
+#header .gnb .depth1>li:hover {
     color: var(--s-color);
 }
 
-
-#header .gnb ul li.on a {
-    color: var(--s-color);
+#header .gnb .depth1>li {
+    position: relative;
 }
 
-#header .gnb ul li.on::after {
-    /* content: "";
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 60px;
-    height: 2px;
-    z-index: 999;
-    color: var(--s-color); */
+#header .gnb .depth1>li::after {
     content: "";
-    display: block;
-    width: 100%;
-    height: 5px;
-    margin: -10px 0 0 0;
+    position: absolute;
+    left: 50%;
+    bottom: 25%;
+    z-index: 999;
+    transform: translate(-50%, 0);
+    width: 0;
+    height: 2px;
+    background: #009ddc;
 }
+
+#header .gnb .depth1>li:hover::after {
+    width: 100%;
+    transition: width 0.5s;
+}
+
+#header .gnb .depth1 li .depth2 {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    top: 96px;
+    z-index: 5;
+    transition: 0.5s;
+    height: 0;
+    overflow: hidden;
+    line-height: 32px;
+    transform: translate(-50%, 0);
+}
+
+#header .gnb:hover .depth1 li .depth2 {
+    height: 190px;
+    color: var(--normal-color);
+}
+
+#header .gnb .depth2 li {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+#header .gnb .depth1>li::before {
+    content: '';
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 0;
+    transition: 0.5s;
+    /* background: var(--white-color); */
+    /* box-shadow: 0 5px 10px rgba(17, 17, 17, .1); */
+    z-index: 3;
+}
+
+
+#header .gnb .depth1>li:hover::before {
+    height: 210px;
+}
+
+
 
 #header .util_box ul {
     display: flex;
@@ -120,9 +203,6 @@
     height: 8px;
     background: #ddd;
 }
-
-
-
 
 /* 메인비주얼 */
 .MainVisual {}
@@ -190,13 +270,13 @@
     background: #ddd;
     margin: 0 8px 0 0;
     border-radius: 8px;
-
+    transition: width 0.5s;
 }
 
 .MainVisual .main_slide .slick-dots li.slick-active {
     width: 50px;
     background: var(--s-color);
-    transition: width 3s;
+
 }
 
 
@@ -206,7 +286,7 @@
 
 .MainVisual .scroll {
     position: absolute;
-    bottom: 0;
+    bottom: 30px;
     left: 50%;
     z-index: 999;
     transform: translate(-50%, 0);
@@ -216,25 +296,30 @@
     letter-spacing: 2px;
 
     height: 80px;
+    width: 52px;
+
 }
 
 .MainVisual .scroll::before {
-    content: "";
+    content: "\e946";
+    font-family: 'Material Symbols Outlined';
+    font-size: 50px;
+    font-weight: 200;
     position: absolute;
-    bottom: 0;
+    bottom: 20px;
     left: 50%;
     transform: translate(-50%, 0);
-    height: 60px;
-    width: 1px;
-    background: #fff;
+    color: #fff;
+
+    animation: scroll 1.4s infinite;
 }
 
 .MainVisual .scroll::after {
     content: "";
     position: absolute;
-    top: 30px;
-    left: 50%;
-    transform: translate(-50%, 0);
+    top: 56%;
+    left: 49%;
+    transform: translate(-50%, -50%);
     height: 6px;
     width: 6px;
     background: #fff;
@@ -246,21 +331,24 @@
 
 @keyframes scroll {
     0% {
-        top: 40px;
+        /* top: 40px;
         transform: translate(-50%, 0) scale(1);
-        opacity: 1;
+        opacity: 1; */
+        bottom: 4px;
     }
 
     50% {
-        top: 100px;
+        /* top: 100px;
         transform: translate(-50%, 0) scale(1);
-        opacity: 1;
+        opacity: 1; */
+        bottom: 14px;
     }
 
     100% {
-        top: 100px;
+        /* top: 100px;
         transform: translate(-50%, 0) scale(5);
-        opacity: 0;
+        opacity: 0; */
+        bottom: 4px;
     }
 }
 
@@ -280,13 +368,13 @@
 
 .MainIntro .inner_notice {
     position: absolute;
-    top: -50%;
+    top: -100%;
     left: 50%;
     transform: translate(-50%, -100%);
     display: flex;
     position: relative;
     width: 100%;
-    /* margin: 0 0 80px 0; */
+    margin: 0 0 50px 0;
 }
 
 .MainIntro .inner_notice .notice_wrap {
@@ -313,6 +401,16 @@
     justify-content: space-between;
 }
 
+.MainIntro .inner_notice .notice_arrow {
+    cursor: pointer;
+
+
+}
+
+.MainIntro .inner_notice .notice_arrow span {
+    border: 1px solid #ececec;
+    color: var(--light-gray);
+}
 
 
 .MainIntro .inner_content {
@@ -567,9 +665,9 @@
 }
 
 .MainArchive .tab_content ul {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 16px; */
 }
 
 
@@ -656,36 +754,7 @@
     color: var(--white-color);
 }
 
-/* .MainArchive .inner_notice {
-    display: flex;
-    position: relative;
-    width: 100%;
-    margin: 0 0 80px 0;
-}
-
-.MainArchive .inner_notice .notice_wrap {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 4px 16px;
-    background: #f9f9f9;
-}
-
-.MainArchive .inner_notice h3 {
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.MainArchive .inner_notice .notice_slide {
-    width: 80%;
-    background: var(--white-color);
-    padding: 8px 24px;
-}
-
-.MainArchive .inner_notice .notice_slide a {
-    display: flex;
-    justify-content: space-between;
-} */
+.MainArchive .tab_content .tab_inner {}
 
 
 
@@ -822,7 +891,7 @@
 
 /* 푸터 */
 .footer {
-    padding: 50px 0;
+    padding: 60px 0 70px 0;
     background: #ddd;
 }
 

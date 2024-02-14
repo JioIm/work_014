@@ -9,6 +9,7 @@ $(function () {
         }
     });
 
+
     $('.main_slide').slick({
         arrows: false,
         dots: true,
@@ -41,6 +42,17 @@ $(function () {
         $('.MainContent .con_area').addClass('on');
     });
 
+
+    $('.MainArchive .tab_inner ').slick({
+        arrows: false,
+        dots: true,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1
+    });
+
+
+
     $('.notice_slide').slick({
         arrows: false,
         dots: false,
@@ -49,5 +61,14 @@ $(function () {
         autoplaySpeed: 5000,
         vertical: true,
     });
+
+    $('.notice_arrow .prev').on('click', function () {
+        $('.MainIntro .notice_slide').slick('slickPrev');
+    });
+
+    $('.notice_arrow .next').on('click', function () {
+        $('.MainIntro .notice_slide').slick('slickNext');
+    });
+
 
 })
