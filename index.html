@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/slick.css">
+    <link rel="stylesheet" href="./css/hamburgers.css">
     <link rel="stylesheet" href="./css/style.css">
 
     <script src="./js/jquery-1.12.4.min.js"></script>
@@ -71,6 +72,13 @@
                         <li><a href="">로그인</a></li>
                         <li><a href="">회원가입</a></li>
                     </ul>
+                </div>
+                <div class="mopen">
+                    <button class="hamburger hamburger--spin-r " type="button">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
                 </div>
             </div>
         </header>
@@ -245,16 +253,17 @@
 
             <section class="MainArchive default">
                 <div class="inner">
-
                     <div class="inner_content">
                         <div class="tit_area">
                             <h2>사업 아카이브</h2>
-                            <ul class="a_tab">
-                                <li class="on"><a href="">전체</a></li>
-                                <li><a href="">포토</a></li>
-                                <li><a href="">영상</a></li>
-                            </ul>
-
+                            <div class="tab_wrap">
+                                <ul class="a_tab">
+                                    <li class="on"><a href="">전체</a></li>
+                                    <li><a href="">포토</a></li>
+                                    <li><a href="">영상</a></li>
+                                </ul>
+                                <span></span>
+                            </div>
                         </div>
                         <div class="tab_content">
                             <div class="content on">
@@ -395,6 +404,50 @@
                                             </div>
                                         </a>
                                     </li>
+                                    <li>
+                                        <a href="">
+                                            <div class="img_box">
+                                                <img src="./images/t_con_101.jpg" alt="">
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong>포토</strong>
+                                                <div class="desc_txt">
+                                                    <p>2023 연말연시 온정나눔 행사</p>
+                                                    <span>2024-01-11</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <div class="img_box">
+                                                <img src="./images/t_con_102.jpg" alt="">
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong>포토</strong>
+                                                <div class="desc_txt">
+                                                    <p>2023 문화예술 장학-발레 장학증서 수여식</p>
+                                                    <span>2024-01-11</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <div class="img_box">
+                                                <img src="./images/t_con_104.png" alt="">
+                                            </div>
+                                            <div class="txt_box">
+                                                <strong>포토</strong>
+                                                <div class="desc_txt">
+                                                    <p>
+                                                        2023 고교 상상장학캠프 - 예술모아 열음
+                                                    </p>
+                                                    <span>2024-01-11</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="content">
@@ -443,11 +496,67 @@
                                             </div>
                                         </a>
                                     </li>
+                                    <li>
+                                        <a href="">
+                                            <div class="img_box">
+                                                <img src="./images/t_con_103.jpg" alt="">
+                                            </div>
+                                            <div class="txt_box video">
+                                                <strong class="video">영상</strong>
+                                                <div class="desc_txt">
+                                                    <p>2022 과학기술 장학증서 수여식</p>
+                                                    <span>2024-01-11</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <div class="img_box">
+                                                <img src="./images/t_con_105.JPG" alt="">
+                                            </div>
+                                            <div class="txt_box video">
+                                                <strong class="video">영상</strong>
+                                                <div class="desc_txt">
+                                                    <p>
+                                                        KT&G장학재단 제3회 사회혁신 아이디어 공모전 현장 스케치
+                                                    </p>
+                                                    <span>2024-01-11</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <div class="img_box">
+                                                <img src="./images/t_con_106.png" alt="">
+                                            </div>
+                                            <div class="txt_box video">
+                                                <strong class="video">영상</strong>
+                                                <div class="desc_txt">
+                                                    <p>2023 문화예술 장학-발레 마스터 클래스 쇼잉</p>
+                                                    <span>2024-01-11</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
-                    </div>
 
+                    </div>
+                </div>
+                <div class="archive_arrow">
+                    <div class="arch_prev">
+                        <span class="material-symbols-outlined">
+                            chevron_left
+                        </span>
+                    </div>
+                    <div class="arch_next">
+                        <span class="material-symbols-outlined">
+                            chevron_right
+                        </span>
+                    </div>
                 </div>
             </section>
 
@@ -477,7 +586,7 @@
                         <!-- * 카카오맵 - 지도퍼가기 -->
                         <!-- 1. 지도 노드 -->
                         <div id="daumRoughmapContainer1706805081417"
-                            class="root_daum_roughmap root_daum_roughmap_landing"></div>
+                            class="root_daum_roughmap root_daum_roughmap_landing __map"></div>
 
                         <!--
                         	2. 설치 스크립트
@@ -491,8 +600,8 @@
                             new daum.roughmap.Lander({
                                 "timestamp": "1706805081417",
                                 "key": "2hxe3",
-                                "mapWidth": "800",
-                                "mapHeight": "360"
+                                //"mapWidth": "800",
+                                //"mapHeight": "360"
                             }).render();
                         </script>
                     </div>
